@@ -12,6 +12,26 @@ void insertionSort(int* array, int length){
     key = array[i];
     j = i-1;
     while(j >= 0 && array[j] > key){
+      array[j+1] = array[j];
+      j--;
+    }
+    array[j+1] = key;
+  }
+
+  return;
+}
+
+// Alternative to the insertion sort from Cormen Algorithms book
+void alternativeInsertionSort(int* array, int length){
+
+  int i;
+  int j;
+  int key;
+  int tmp;
+  for(i = 1; i < length; i++){
+    key = array[i];
+    j = i-1;
+    while(j >= 0 && array[j] > key){
       if(array[j] > array[j+1]){
         tmp = array[j];
         array[j] = array[j+1];
@@ -23,7 +43,6 @@ void insertionSort(int* array, int length){
 
   return;
 }
-
 
 int main() {
 
