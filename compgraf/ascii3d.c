@@ -14,13 +14,6 @@
 
 char depth[] = {'@', '0', 'O', 'o', '.'};
 
-/*char setDepth(int zindex) {*/
-  /*if(zindex < 25) return depth[0];*/
-  /*if(zindex < 50) return depth[1];*/
-  /*if(zindex < 75) return depth[2];*/
-  /*if(zindex < 100) return depth[3];*/
-  /*return depth[4];*/
-/*}*/
 
 char setDepthChar(int zindex) {
   if(zindex < 20) return depth[0];
@@ -34,28 +27,6 @@ int main() {
 
   int visionPoint[] = {22, 22, 0};
   int depthCoeficient = 15;
-
-  /*int cubo[8][3] = {*/
-    /*{10, 10, 0},*/
-    /*{110, 10, 0},*/
-    /*{10, 110, 0},*/
-    /*{110, 110, 0},*/
-    /*{10, 10, 100},*/
-    /*{110, 10, 100},*/
-    /*{10, 110, 100},*/
-    /*{110, 110, 100},*/
-  /*};*/
-
-  /*int cubo[8][3] = {*/
-    /*{5, 5, 0},*/
-    /*{55, 5, 0},*/
-    /*{5, 55, 0},*/
-    /*{55, 55, 0},*/
-    /*{5, 5, 50},*/
-    /*{55, 5, 50},*/
-    /*{5, 55, 50},*/
-    /*{55, 55, 50},*/
-  /*};*/
 
   float cubo[8][3] = {
     {2, 2, 20},
@@ -91,7 +62,7 @@ int main() {
   float theta = PI/180;
   while(angle <= 180) {
     usleep(100000);
-    /*system("clear");*/
+    system("clear");
 
     for(int i = 0; i < RESOLUTION; i++){
       for(int j = 0; j < RESOLUTION; j++){
@@ -116,11 +87,6 @@ int main() {
       }
 
       /* Rotacao do cubo em torno de Y */
-
-      /*if(i == 4 || i == 6) {*/
-        /*cubo[i][0] += 0.9;*/
-        /*cubo[i][2] += 0.1;*/
-      /*}*/
 
       int sentidoZ = cubo[i][0] <= center[0] ? 1 : -1;
       int sentidoX = cubo[i][2] <= center[2] ? -1 : 1;
