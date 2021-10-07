@@ -91,13 +91,8 @@ int main() {
       int sentidoZ = cubo[i][0] <= center[0] ? 1 : -1;
       int sentidoX = cubo[i][2] <= center[2] ? -1 : 1;
 
-      if(sentidoX == sentidoZ) {
-        cubo[i][0] += cos(theta) * sentidoX;
-        cubo[i][2] += cos(theta) * sentidoZ;
-      } else {
-        cubo[i][0] += cos(theta) * sentidoX;
-        cubo[i][2] += cos(theta) * sentidoZ;
-      }
+      cubo[i][0] += cos(theta) * sentidoX;
+      cubo[i][2] += cos(theta) * sentidoZ;
     }
 
     for(int i = 0; i < RESOLUTION; i++){
